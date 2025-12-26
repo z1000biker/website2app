@@ -1,0 +1,26 @@
+[
+    {
+        "timestamp": "2025-12-24 23:30:49",
+        "app_title": "My Android App",
+        "package_name": "com.example.myapp",
+        "output_dir": "C:/Users/nik/OneDrive/Documents"
+    },
+    {
+        "timestamp": "2025-12-24 23:26:55",
+        "app_title": "AR Kontopoulos Fight",
+        "package_name": "com.kontopoulos.ARapp",
+        "output_dir": "C:/Users/nik/OneDrive/Documents"
+    },
+    {
+        "timestamp": "2025-12-24 23:10:06",
+        "app_title": "AR Kontopoulos APP",
+        "package_name": "com.kontopoulos.arkontopoulosapp",
+        "output_dir": "C:/Users/nik/Documents/work"
+    },
+    {
+        "timestamp": "2025-12-24 22:57:53",
+        "app_title": "My Android App",
+        "package_name": "com.example.myapp",
+        "output_dir": "C:/Users/nik/OneDrive/Desktop"
+    }
+]

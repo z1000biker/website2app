@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="{{ package_name }}">
+
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    {% if extras["Camera Access"] %}<uses-permission android:name="android.permission.CAMERA" />{% endif %}
+    {% if extras["Geolocation"] %}<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />{% endif %}
+    {% if extras["Microphone"] %}<uses-permission android:name="android.permission.RECORD_AUDIO" />{% endif %}
+    {% if extras["Enable Downloads"] %}<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />{% endif %}
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@android:style/Theme.Light.NoTitleBar">
+        
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            {% if orientation == "Portrait" %}
+            android:screenOrientation="portrait"
+            {% elif orientation == "Landscape" %}
+            android:screenOrientation="landscape"
+            {% endif %}
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

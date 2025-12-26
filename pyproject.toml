@@ -1,0 +1,111 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "website2app"
+version = "2.0.0"
+description = "Transform websites into Android APKs and iOS Xcode Projects"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Nikos Kontopoulos", email = "sv1eex@hotmail.com"}
+]
+maintainers = [
+    {name = "Nikos Kontopoulos", email = "sv1eex@hotmail.com"}
+]
+keywords = [
+    "android",
+    "ios",
+    "apk",
+    "webview",
+    "mobile",
+    "app-builder",
+    "website-to-app",
+    "pyqt6",
+    "xcode"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: X11 Applications :: Qt",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Code Generators"
+]
+requires-python = ">=3.8"
+dependencies = [
+    "PyQt6>=6.4.0",
+    "Jinja2>=3.1.0",
+    "Pillow>=9.0.0",
+    "requests>=2.28.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-qt>=4.2.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/z1000biker/website2app"
+Repository = "https://github.com/z1000biker/website2app"
+Issues = "https://github.com/z1000biker/website2app/issues"
+
+[project.scripts]
+website2app = "main:main"
+
+[project.gui-scripts]
+website2app-gui = "main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gui*", "builder*", "assets*"]
+
+[tool.black]
+line-length = 120
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | bin
+    | output
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 120
+skip = [".git", ".venv", "bin", "output"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
