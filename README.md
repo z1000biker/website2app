@@ -229,7 +229,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 📬 Contact
 
-Created by **Nikos Kontopoulos** — feel free to reach out!
+Created by **Nik Kontopoulos** — feel free to reach out!
 
 - **GitHub**: [@z1000biker](https://github.com/z1000biker)
 - **Email**: sv1eex@hotmail.com
